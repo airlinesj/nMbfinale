@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Loyalty Engine</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .login-form {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-login {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            width: 100%;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .btn-login:hover {
+            background: #1d4ed8;
+        }
+
+        .auth-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .auth-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .auth-link a:hover {
+            text-decoration: underline;
+        }
+
+        .role-indicator {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
+            <p>Sign in to your Loyalty Engine account</p>
+        </div>
+        
+        <div class="login-form">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" required 
+                           placeholder="Enter your registered email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" required 
+                           placeholder="Enter your password">
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+
+            <div class="role-indicator">
+                <small>
+                    <strong>Email-based access:</strong><br>
+                    admin@ → Admin Dashboard | auditor@ → Auditor | Regular → User Dashboard
+                </small>
+            </div>
+
+            <div class="auth-link">
+                <p>Don't have an account? <a href="register.html">Create one here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login functionality with backend API
+        class LoginManager {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.checkExistingSession();
+            }
+
+            setupEventListeners() {
+                const loginForm = document.getElementById('loginForm');
+                if (loginForm) {
+                    loginForm.addEventListener('submit', (e) => this.handleLogin(e));
+                }
+
+                const emailInput = document.getElementById('email');
+                if (emailInput) {
+                    emailInput.addEventListener('input', (e) => this.updateRoleIndicator(e.target.value));
+                }
+            }
+
+            async handleLogin(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                try {
+                    // Send login request to backend
+                    const response = await fetch('http://localhost:3000/api/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        // Store token in localStorage
+                        localStorage.setItem('authToken', result.token);
+                        
+                        // Redirect based on role
+                        let redirectUrl = 'index.html'; // Default for regular users
+                        
+                        if (result.user.role === 'admin') {
+                            redirectUrl = 'admin-dashboard.html';
+                        } else if (result.user.role === 'auditor') {
+                            redirectUrl = 'admin-dashboard.html'; // Could be auditor-dashboard.html
+                        }
+                        
+                        alert(result.message);
+                        setTimeout(() => {
+                            window.location.href = redirectUrl;
+                        }, 1000);
+                    } else {
+                        alert(result.error || 'Login failed');
+                    }
+                } catch (error) {
+                    console.error('Login error:', error);
+                    alert('Login failed. Please try again.');
+                }
+            }
+
+            updateRoleIndicator(email) {
+                const roleIndicator = document.querySelector('.role-indicator small');
+                
+                if (!roleIndicator) return;
+                
+                if (email.startsWith('admin@')) {
+                    roleIndicator.innerHTML = '<strong>Admin access detected</strong> - Will redirect to Admin Dashboard';
+                } else if (email.startsWith('auditor@')) {
+                    roleIndicator.innerHTML = '<strong>Auditor access detected</strong> - Will redirect to Auditor Dashboard';
+                } else if (email.includes('@')) {
+                    roleIndicator.innerHTML = '<strong>Standard user access</strong> - Will redirect to User Dashboard';
+                } else {
+                    roleIndicator.innerHTML = '<strong>Email-based access:</strong><br>admin@ → Admin Dashboard | auditor@ → Auditor | Regular → User Dashboard';
+                }
+            }
+
+            checkExistingSession() {
+                const token = localStorage.getItem('authToken');
+                if (token) {
+                    // Verify session with backend
+                    this.verifySession(token);
+                }
+            }
+
+            async verifySession(token) {
+                try {
+                    const response = await fetch('http://localhost:3000/api/verify-session', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ token })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        // Session is valid, redirect based on role
+                        let redirectUrl = 'index.html';
+                        
+                        if (result.user.role === 'admin') {
+                            redirectUrl = 'admin-dashboard.html';
+                        } else if (result.user.role === 'auditor') {
+                            redirectUrl = 'admin-dashboard.html';
+                        }
+                        
+                        window.location.href = redirectUrl;
+                    } else {
+                        // Session is invalid, remove token
+                        localStorage.removeItem('authToken');
+                    }
+                } catch (error) {
+                    console.error('Session verification error:', error);
+                    localStorage.removeItem('authToken');
+                }
+            }
+        }
+
+        // Initialize login manager when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new LoginManager();
+        });
+    </script>
+</body>
+</html>

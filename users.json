@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1756467968985",
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "testuser@example.com",
+    "username": "testuser",
+    "password": "$2b$10$yKIao0kZdvGB81Onha/sCOzG2nYcXSdxjNR5Csks7VzlO4d30ptjK",
+    "role": "user",
+    "createdAt": "2025-08-29T11:46:08.985Z"
+  },
+  {
+    "id": "1756468319219",
+    "firstName": "keith",
+    "lastName": "botso",
+    "email": "keithbotso@gmail.com",
+    "username": "murungu",
+    "password": "$2b$10$2sJLei3Z2cbi9NnjFry5w.V2i5rInnrpd0KxMkwVjqwOlG0qoVoyq",
+    "role": "user",
+    "createdAt": "2025-08-29T11:51:59.219Z"
+  }
+]

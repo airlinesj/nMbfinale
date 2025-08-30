@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-08-29T11:47:49.157Z",
+  "summary": {
+    "total": 14,
+    "passed": 11,
+    "failed": 3,
+    "successRate": "78.6"
+  },
+  "details": [
+    {
+      "test": "Location API initialization",
+      "status": "FAIL",
+      "message": "ZimbabweLocationAPI is not a constructor"
+    },
+    {
+      "test": "Login location capture",
+      "status": "FAIL",
+      "message": "LoginManager is not defined"
+    },
+    {
+      "test": "Customers array generated",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "All customers have location field",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Locations are Zimbabwe cities",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Location distribution calculated",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Location counts calculated correctly",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Top cities identified",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Top city is Harare",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Top city count correct",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Chart config has correct type",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Chart has correct title",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "Chart data matches top cities",
+      "status": "PASS",
+      "message": ""
+    },
+    {
+      "test": "End-to-end flow",
+      "status": "FAIL",
+      "message": "ZimbabweLocationAPI is not a constructor"
+    }
+  ]
+}

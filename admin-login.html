@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Program Admin Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .login-form {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 1rem;
+        }
+
+        .btn-login {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .role-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .role-option {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .role-option.selected {
+            border-color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .role-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2><i class="fas fa-university"></i> Banking Loyalty Platform</h2>
+            <p>Secure Login Portal</p>
+        </div>
+        
+        <div class="login-form">
+            <div class="role-selector">
+                <div class="role-option" data-role="user">
+                    <div class="role-icon"><i class="fas fa-user"></i></div>
+                    <div>Customer</div>
+                </div>
+                <div class="role-option" data-role="admin">
+                    <div class="role-icon"><i class="fas fa-user-shield"></i></div>
+                    <div>Admin</div>
+                </div>
+                <div class="role-option" data-role="auditor">
+                    <div class="role-icon"><i class="fas fa-search"></i></div>
+                    <div>Auditor</div>
+                </div>
+            </div>
+
+            <form id="loginForm">
+                <input type="hidden" id="selectedRole" value="">
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" required placeholder="Enter your password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Role selection functionality
+        document.querySelectorAll('.role-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.role-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('selectedRole').value = this.getAttribute('data-role');
+            });
+        });
+
+        // Login functionality with backend API
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const role = document.getElementById('selectedRole').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!role) {
+                alert('Please select a role');
+                return;
+            }
+            
+            try {
+                // Send login request to backend
+                const response = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Check if the user has the correct role
+                    if (result.user.role !== role) {
+                        alert(`You are not authorized to access ${role} dashboard. You are logged in as ${result.user.role}.`);
+                        return;
+                    }
+                    
+                    // Store token in localStorage
+                    localStorage.setItem('authToken', result.token);
+                    
+                    // Redirect to admin dashboard
+                    alert(result.message);
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                } else {
+                    alert(result.error || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Login failed. Please try again.');
+            }
+        });
+
+        // Check for existing session
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('authToken');
+            if (token) {
+                // Verify session with backend
+                fetch('http://localhost:3000/api/verify-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ token })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.user) {
+                        // Session is valid, redirect to admin dashboard
+                        window.location.href = 'index.html';
+                    } else {
+                        // Session is invalid, remove token
+                        localStorage.removeItem('authToken');
+                    }
+                })
+                .catch(error => {
+                    console.error('Session verification error:', error);
+                    localStorage.removeItem('authToken');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
