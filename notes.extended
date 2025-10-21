@@ -1,0 +1,380 @@
+This compilation of study notes is structured according to the HCSCI235 Software Project Management Module Outline, drawing exclusively from the provided source material.
+
+---
+
+# HCSCI235 Software Project Management Study Notes
+
+The main objective of this module is to help students understand the various techniques available for effective management of projects as they progress through development stages and the need for close co-operation among stakeholders.
+
+## 1. Introduction to Software Project Management
+
+### Key Concepts
+
+*   **Project**
+*   **Project Management**
+*   **Software Project Management**
+*   **Project Manager**
+*   **Project Stakeholders**
+*   **SMART Objectives**
+*   **Invisibility, Complexity, Conformity, Flexibility (Software Characteristics)**
+*   **Theory W (Win-Win)**
+
+### Notes
+
+#### Definitions
+A **Project** is defined as any work that occurs only once, has a clear beginning and end, and is intended to create a unique product or knowledge. Projects involve non-routine tasks, require planning, aim to meet specific objectives, have a predetermined time span, involve several specializations, use temporary work groups, proceed in phases, and are constrained by resources.
+
+**Project Management** is the application of knowledge, skills, tools, and techniques to project activities to meet or exceed stakeholder needs and expectations. **Software Project Management** specifically involves effectively implementing software engineering practices.
+
+Software projects are particularly difficult due to characteristics identified by Fred Brooks:
+1.  **Invisibility**: Progress is not immediately visible (unlike, for example, bridge construction), leading project management to be viewed as making the invisible visible.
+2.  **Complexity per dollar spent**: Software products are generally more complex than other engineered artefacts.
+3.  **Conformity**: Developers must conform to client requirements, which can sometimes be inconsistent.
+4.  **Flexibility**: Software is easy to change; however, when interfacing with physical or organizational systems, the software is usually expected to adapt, making systems particularly subject to change.
+
+The **Project Manager** manages the daily details, balancing conflicting demands related to available resources versus expectations, differing stakeholder priorities, identified needs versus project scope, and quality versus quantity. The Project Manager is responsible for overall success or failure. A good Project Manager is the hub of activity, a leader, motivator, communicator, negotiator, and controller of resources.
+
+#### Success/Failure of Projects
+Successful projects exhibit specific characteristics:
+1.  **Clear objectives**: Objectives must be **SMART**: **S**pecific, **M**easurable, **A**chievable, **R**elevant, and **T**ime constrained. In software, success is typically summarized as delivering agreed functionality, to the required quality, on time, and within budget.
+2.  **A good project plan**: Allows everyone to understand their role, defines responsibilities, estimates resources, and serves as a monitoring tool.
+3.  **Communication**: The project is a collaborative effort requiring effective and continual communication.
+4.  **Stakeholder support**: Necessary throughout the project life cycle.
+
+Projects generally fail due to a lack of these characteristics.
+
+#### Project Stakeholders
+**Project Stakeholders** are individuals and organizations actively involved in the project or whose interests may be positively or negatively affected by its execution or completion. Early identification of stakeholders is crucial for establishing adequate communication channels.
+
+Categories of stakeholders include:
+*   **Internal to the project team** (under direct managerial control of the PM).
+*   **External to the project team but within the same organization** (e.g., users assisting with systems testing; commitment needs negotiation).
+*   **External to both the project team and the organization** (e.g., customers, contractors; relationship usually contract-based).
+
+Key stakeholders commonly include the **Project Manager**, **Customer**, **Performing organization**, and **Sponsor** (provides financial resources). Project Managers must reconcile differing objectives, such as end-users concerned with ease of use and managers focused on staff savings. Boehm and Ross proposed **Theory W (win-win)**, where the project manager aims to create situations ensuring all parties benefit.
+
+#### Lease/Purchase Decision
+Decisions to lease or purchase costly project equipment are based on several factors:
+*   Availability of funds for purchase.
+*   Cost of financing the purchase (e.g., interest on borrowed money).
+*   The useful life of the machine.
+*   Cost of possible breakdowns and/or maintenance.
+*   Earning potential and relative effects on taxation (if the project produces revenue).
+*   Present values of future payments.
+*   Likely resale value of the asset upon project completion.
+
+### Real Time Examples
+*   Project Manager activity in software: Ascertaining client requirements, selecting a team with appropriate skills, estimating cost and effort, and managing risk.
+*   Example of Invisibility: Unlike a bridge construction project where progress is visible, software progress is not immediately visible.
+*   Example of differing objectives: End-users might prioritize the ease of use of a new application, while managers might prioritize staff savings.
+
+### Qs and As
+
+**Q: Outline the four characteristics identified by Fred Brooks that make software projects particularly difficult to manage.**
+**A:** The four characteristics are: **Invisibility** (progress is not readily observed), **Complexity per dollar spent** (software contains high complexity), **Conformity** (developers must conform to inconsistent human client requirements), and **Flexibility** (software systems are highly subject to change to accommodate physical or organizational interfaces).
+
+**Q: Explain the criteria used to define successful project objectives according to the SMART acronym.**
+**A:** Successful objectives must be: **S**pecific (concrete and well-defined), **M**easurable (having quantifiable measures of effectiveness, like Mean Time Between Failures for reliability), **A**chievable (within the power of the group to realize), **R**elevant (to the true purpose of the project), and **T**ime constrained (having a defined point in time for achievement).
+
+## 2. Major Areas of Concern in Project Management
+
+### Key Concepts
+
+*   **Project Time Management Processes**
+*   **Activity Definition**
+*   **Schedule Baseline**
+*   **Project Cost Management Processes**
+*   **Project Scope Management**
+*   **Earned Value Management (EVM)**
+*   **Tuckman Model of Team Development**
+
+### Notes
+
+#### (a) Project Time Management
+This involves processes required to ensure timely project completion. The six main processes are:
+1.  **Activity Definition**: Identifying activities needed to produce deliverables.
+2.  **Activity Sequencing**: Documenting relationships between activities (output: network diagram).
+3.  **Activity Resource Estimation**: Estimating resources (people, equipment, materials) needed.
+4.  **Activity Duration Estimation**: Estimating work periods required for individual activities.
+5.  **Schedule Development**: Analysing sequences, resources, and duration estimates to create the project schedule (output: schedule baseline).
+6.  **Schedule Control**: Controlling and managing changes to the schedule.
+
+#### (b) Project Cost Management
+This ensures the project is completed within an approved budget. Project Managers must ensure projects are well-defined and have accurate time/cost estimates. The three processes are:
+1.  **Cost Estimation**: Developing an approximation of resource costs.
+2.  **Cost Budgeting**: Allocating the overall cost estimate to work items to establish a baseline.
+3.  **Cost Control**: Controlling changes to the project budget.
+
+#### (c) Project Scope Management
+This ensures the project includes **all the work required, and only the work required**, for successful completion. Project scope completion is measured against the **project plan**, while product scope completion is measured against the **product requirements**. Both types of scope management must be integrated.
+
+*   *Real Time Example:* A new telephone system project typically includes four subsidiary components: hardware, software, training, and implementation.
+
+#### (d) Project Risk Management
+This is the systematic process of identifying, analyzing, and responding to project risk, focusing on maximizing positive outcomes and minimizing adverse events. Processes include Risk Management Planning, Risk Identification, Qualitative Risk Analysis, Quantitative Risk Analysis, Risk Response Planning, and Risk Monitoring and Control.
+
+#### (e) Project Procurement Management
+This covers acquiring goods and services from outside the performing organization. Processes are Procurement Planning (what and when to procure), Solicitation Planning (document requirements, identify sources), Solicitation (obtaining bids), Source Selection (choosing seller), Contract Administration, and Contract Closeout.
+
+#### (f) Project Quality Management
+This ensures the project satisfies the required needs and includes quality planning, assurance, control, and improvement. It must address both the management of the project and the product resulting from the project.
+
+#### (g) Project Integration Management
+This ensures the proper coordination of the project's various elements and involves making trade-offs among competing objectives. **Earned Value Management (EVM)** is a technique used to integrate processes and measure performance. Earned Value is the amount of work completed measured against the budgeted effort the work was supposed to consume (Budgeted Cost of Work Performed—BCWP).
+
+#### (h) Project Communications Management
+This ensures the timely and appropriate generation, collection, dissemination, storage, and disposition of project information. Processes include Communications Planning (who needs what, when, and how), Information Distribution, Performance Reporting, and Administrative Closure.
+
+#### (i) Project Human Resource Management
+This focuses on making the most effective use of all people involved. Processes include Human Resource Planning, Acquiring the project team, Developing the project team, and Managing the project team.
+
+**Developing the project team** is key for teamwork and performance enhancement. The **Tuckman model of team development** describes five stages:
+1.  **Forming**: Introduction of members, setting ground rules (little work achieved).
+2.  **Storming**: Conflicts arise as members vie for leadership or establish operating methods.
+3.  **Norming**: Conflicts settle, common working method develops, cooperation replaces mistrust.
+4.  **Performing**: Emphasis shifts to reaching team goals; relationships are settled, and loyalty is built.
+5.  **Adjourning**: The team breaks up after completing the project.
+
+### Qs and As
+
+**Q: Distinguish between Project Scope and Product Scope.**
+**A:** **Project Scope** ensures all the work required to complete the project successfully is included, and its completion is measured against the **project plan**. **Product Scope** ensures the product meets the specific requirements, and its completion is measured against the **product requirements**.
+
+**Q: List and briefly describe the five stages of team development according to the Tuckman model.**
+**A:** **Forming** (getting to know each other), **Storming** (conflict over leadership and methods), **Norming** (developing common working methods and cohesion), **Performing** (focusing on reaching goals and tasks), and **Adjourning** (breaking up the team after successful completion).
+
+## 3. Project Evaluation and Program Management
+
+### Key Concepts
+
+*   **Cost-Benefit Analysis**
+*   **Cash Flow Forecasting**
+*   **Net Profit (NP)**
+*   **Payback Period (PBP)**
+*   **Return On Investment (ROI)**
+*   **Net Present Value (NPV)**
+*   **Discount Rate**
+*   **Internal Rate of Return (IRR)**
+*   **Discounted Cash Flow (DCF)**
+
+### Notes
+
+Project evaluation is often carried out early (Step 0 of the Step-Wise Approach) and includes evaluation against strategic, technical, and economic criteria.
+
+**Cost-Benefit Analysis** is performed to decide if a proposed project is the best option available, even if estimated benefits exceed costs. It involves identifying all costs and benefits (development, operating, expected income) and expressing them in common monetary units.
+
+**Cash Flow Forecasting** indicates when expenditure (negative cash flow, e.g., staff wages) and income (positive cash flow) will take place. Accurate forecasting is difficult but crucial to ensure the organization can fund the development expenditure. Inflation effects are usually ignored.
+
+#### (a) Net Profit (NP)
+The **Net Profit** is the difference between total income and total costs over the project's life. While simple, it ignores the timing of cash flows, meaning two projects with the same NP might not be equally preferable if one delays returns substantially.
+
+#### (b) Payback Period (PBP)
+The **Payback Period** is the time taken to break even or pay back the initial investment. Organizations typically prefer the shortest PBP. Its advantage is simplicity; its disadvantage is that it completely ignores profitability (income or expenditure) that occurs after the project breaks even.
+
+#### (c) Return On Investment (ROI)
+The **Return on Investment (ROI)**, also known as Accounting Rate of Return (ARR), compares net profitability to the required investment. While simple, it fails to account for the timing of cash flows or the compounding of interest, potentially making it misleading.
+
+#### (d) Net Present Value (NPV)
+**Net Present Value (NPV)** is a evaluation technique that considers both project profitability and the timing of cash flows, based on the principle that money received today is more valuable than money received later.
+
+Future cash flows are **discounted** using a chosen **discount rate** ($r$). The Present Value (PV) of a future cash flow is calculated by multiplying the cash flow by the appropriate discount factor: $1 / (1 + r)^t$, where $t$ is the number of years into the future.
+
+The NPV for a project is obtained by discounting all cash flows (negative and positive) and summing the discounted values. An initial investment (Year 0) is not discounted. A positive NPV suggests the project is a candidate for further consideration. Risk can be incorporated by using a higher discount rate (**risk premium**) for riskier projects.
+
+*   *Real Time Example:* If the discount rate is 10%, receiving $100 in one year has a present value of $91, meaning $91 invested today at 10% interest would yield $100 in a year.
+
+#### (e) Internal Rate of Return (IRR)
+The **Internal Rate of Return (IRR)** is the percentage discount rate that would result in an NPV of zero. It provides a profitability measure directly comparable with interest rates. A project with an estimated IRR of 10% is worthwhile if capital can be borrowed for less than 10%.
+
+A drawback of IRR is that it does not indicate the absolute size of the return, and sometimes multiple rates can produce a zero NPV (in which case the lowest value should be taken).
+
+NPV and IRR are collectively known as **Discounted Cash Flow (DCF) techniques**.
+
+### Qs and As
+
+**Q: Why is Net Present Value (NPV) generally considered a more robust evaluation technique than Net Profit (NP) or Return on Investment (ROI)?**
+**A:** NPV is superior because it explicitly accounts for the **timing of cash flows** using a **discount rate**, acknowledging that money received sooner is more valuable (time value of money). NP and ROI ignore this timing aspect entirely.
+
+**Q: How can risk be incorporated into the NPV calculation?**
+**A:** Risk can be incorporated by using a higher **discount rate** to calculate the NPV, often referred to as a **risk premium**. For instance, a reasonably safe project might have an additional 2% risk premium added to the standard discount rate, or 5% for a fairly risky one.
+
+## 4. Overview of Project Planning
+
+### Key Concepts
+
+*   **In-house Development** vs **Outsourcing**
+*   **Project Analysis**
+*   **Project Technical Plan**
+*   **Step-Wise Approach to Project Planning**
+*   **Elapsed Time** vs **Effort**
+*   **Escalation**
+*   **Strategic, Tactical, and Operational Levels**
+
+### Notes
+
+#### (a) In-house Development vs Outsourcing
+In **in-house development**, the project team and users belong to the same organization, and methodologies/technologies are typically dictated by local infrastructure and standards. In **outsourcing** (using an independent software development house), the methodologies and technologies must be reviewed and decided upon for each individual project. Both situations require technical planning.
+
+#### (b) Project Analysis
+**Project Analysis** is the process of selecting the most appropriate methodologies and technologies for a project. It involves choosing technologies, drafting a technical plan, and choosing process models. The outcome influences training needs, staff type, development environment, and maintenance arrangements.
+
+Analysis includes classifying systems (e.g., data-oriented vs control-oriented), identifying package type (general purpose vs application-specific), and assessing if the system is safety-critical.
+
+It also involves identifying high-level project risks, as risk level is determined by the level of **uncertainty**. Uncertainties can relate to the product (users unsure of what they want), process (using a new development method), or resources (availability of experienced staff). Techniques like prototyping (for imprecise requirements) or incremental development (for rapidly changing environments) may be selected during this stage.
+
+#### (c) Project Technical Plan
+The **Project Technical Plan** formally records costs and is used for contract bids. It summarizes constraints, characteristics of the system, risks and uncertainty, user requirements, recommended approaches (methodologies, tools, environments), implementation details (development/maintenance environment, training), and implications for project schedule, effort, and finance.
+
+#### (d) The Step-Wise Approach to Project Planning
+This approach is organized and step-by-step, focusing on planning stages, not monitoring and control. Planning should be iterative, starting in outline and becoming more detailed as execution approaches.
+
+| Step | Activity | Description |
+| :--- | :--- | :--- |
+| **Step 0** | **Select project** | Evaluation against other project proposals (e.g., portfolio management). |
+| **Step 1** | **Identify project scope and objectives** | Establish SMART objectives, project authority, and conduct stakeholder analysis. |
+| **Step 2** | **Identify project infrastructure** | Fit project into strategic planning, compliance with enterprise architecture, identify organizational standards (installation, change control, configuration management), and project team organization. |
+| **Step 3** | **Analyze project characteristics** | Distinguish objective-driven vs product-driven, analyze quality requirements, identify high-level risks, select methodology/life-cycle approach. |
+| **Step 4** | **Identify project products and activities** | Detailed identification of deliverables, documentation of generic product flows, production of ideal activity network, incorporating stages and checkpoints. |
+| **Step 5** | **Estimate effort for each activity** | Perform bottom-up estimates, noting the difference between **effort** (work required, e.g., six staff-days) and **elapsed time** (duration, e.g., two days if three staff work in parallel). Revise long activities into smaller, controllable subtasks. |
+| **Step 6** | **Identify activity risks** | Quantify activity-based risks (likelihood and damage), plan risk reduction (e.g., training courses) and contingency measures (e.g., contract staff). |
+| **Step 7** | **Allocate resources** | Identify staff needs and provisionally allocate staff to tasks, revising plans based on resource constraints/priorities. Output is typically a Gantt chart. |
+| **Step 8** | **Review/publicize plan** | Review quality aspects, ensure quality checks are defined for tasks to be 'signed off', document plans, and obtain stakeholder agreement. |
+
+#### (e) Information and Control in organizations with respect to large projects
+Large projects often employ a hierarchical management structure. Management information generally flows **up** the organizational structure, and control flows **down**. Problems unresolved at a lower level are referred to the next higher level—a process known as **escalation**. Decision-making and information levels are categorized as **Strategic** (top level), **Tactical** (middle level), and **Operational** (low-level/shop floor).
+
+### Real Time Examples
+*   Project Analysis Example: A system designed for a client-server environment requires a different approach than one designed for a PC.
+*   Project Analysis Example: Imprecise user requirements might necessitate adopting a **prototyping** approach.
+
+### Qs and As
+
+**Q: Explain the importance of differentiating between 'effort' and 'elapsed time' during Step 5 of the Step-Wise Approach.**
+**A:** **Effort** is the total amount of work that needs to be done (e.g., six staff days of work). **Elapsed time** is the calendar time between the start and end of a task (e.g., two days if three staff members complete the six days of work simultaneously). Differentiating is crucial for accurate resource planning and scheduling.
+
+**Q: Describe the purpose of Project Analysis in planning a software development project.**
+**A:** Project analysis ensures the selection of the most appropriate methodologies and technologies. It involves identifying high-level project risks based on uncertainty (product, process, resource), selecting life cycle approaches, and determining the characteristics of the software (e.g., application type, safety criticality, hardware environment) that will influence the plan.
+
+## 5. Activity Planning and Network Planning Models
+
+### Key Concepts
+
+*   **Activity Planning Objectives**
+*   **Network Planning Models**
+*   **Activity-on-Node (AON)**
+*   **Critical Path (CPM/CPA)**
+*   **Float/Slack**
+*   **Forward Pass/Backward Pass**
+*   **Program Evaluation and Review Technique (PERT)**
+*   **Expected Time (PERT formula)**
+*   **PERT Chart EXPERT (PCE)**
+
+### Notes
+
+**Activity Planning** creates a detailed plan and schedule (start/completion times for each activity) to ensure resources are available, avoid resource competition, provide detailed progress measurement, and allow for project re-planning. An effective plan uses measurable targets, usually requiring each activity to produce a tangible **deliverable**.
+
+Objectives of Activity Planning include: **Feasibility Assessment**, **Resource Allocation**, **Motivation**, and **Coordination**. A key goal is completing the project in minimum time at an acceptable cost, often achieved by increasing **parallelism**.
+
+#### Network Planning Models
+Project scheduling models activities and relationships as a network. The two best known techniques are **Critical Path Method/Critical Path Analysis (CPM/CPA)** and **Project Evaluation and Review Technique (PERT)**.
+
+In **Activity-on-Node (AON)**, activities are represented by nodes (boxes), and events (dependencies) are represented by arcs/lines. Network construction rules require a single start node, a single end node, no loops, and no dangles.
+
+#### (a) Critical Path Method/Critical Path Analysis (CPM/CPA)
+CPM is a deterministic model that uses a single time estimate for activity duration. It provides a graphical view, predicts project completion time, and identifies critical activities.
+
+Steps in CPM:
+1.  Specify Individual Activities (from the Work Breakdown Structure).
+2.  Determine Sequence of Activities (list immediate predecessors).
+3.  Draw the Network Diagram (AON format).
+4.  Estimate Activity Completion Time (one deterministic figure).
+5.  Identify the **Critical Path**.
+
+Four parameters are calculated for each activity:
+*   **ES (Earliest Start time)**: Earliest time the activity can begin.
+*   **EF (Earliest Finish time)**: ES + activity duration.
+*   **LF (Latest Finish time)**: Latest time activity can finish without delaying the project.
+*   **LS (Latest Start time)**: LF - activity duration.
+
+The **Critical Path** is the longest path through the network. Activities on this path have zero **slack** (ES = LS and EF = LF). Delaying any critical activity delays the entire project.
+
+**Float** (or slack) is the measure of how much an activity can be delayed without affecting the project end date. **Free float** is the time an activity can be delayed without affecting any subsequent activity.
+
+Shortening project duration requires reducing activity times along the critical path, typically by applying more resources or increasing parallelism.
+
+#### (b) Project Evaluation and Review Technique (PERT)
+PERT allows for randomness and uncertainty in activity completion times, making it suitable for less routine projects.
+
+PERT uses three time estimates for each activity:
+1.  **Optimistic time** (shortest time, approximately 1% chance of completion within this time).
+2.  **Most likely time** (completion time having the highest probability).
+3.  **Pessimistic time** (longest time, typically three standard deviations from the mean).
+
+PERT assumes a beta probability distribution. The **Expected time** is approximated using a weighted average:
+$$Expected\ time = \frac{Optimistic + 4 \times Most\ likely + Pessimistic}{6}$$
+
+The variance for each activity completion time can be calculated as:
+$$Variance = \left(\frac{Pessimistic – Optimistic}{6}\right)^2$$
+
+The critical path is determined by summing the **Expected times** for the activities in each sequence. A limitation is that PERT consistently underestimates the expected project completion time because it fails to account for other paths potentially becoming critical.
+
+#### (c) PERT Software – PERT Chart EXPERT (PCE)
+PCE is a Windows-based software used to create PERT charts, displaying tasks and their dependencies. PCE automatically calculates critical and non-critical tasks. It has a seamless, bi-directional interface with MS Project, allowing users to transfer plans and make updates reflected immediately in both programs, although it can be used as a standalone tool.
+
+### Real Time Examples
+*   Calculation Example: Using PERT calculation for expected time estimates incorporates optimism, pessimism, and the most likely scenario to provide a weighted average for planning.
+*   CPM Application: When a critical path activity, say 'Code and Test Module A', is delayed, the project manager must focus resources there to prevent delaying the overall project end date.
+
+### Qs and As
+
+**Q: Calculate the Expected Time for an activity if the Optimistic Time is 5 weeks, the Most Likely Time is 8 weeks, and the Pessimistic Time is 17 weeks.**
+**A:** Using the formula Expected time = (Optimistic + 4 x Most likely + Pessimistic) / 6:
+Expected time = (5 + 4 * 8 + 17) / 6 = (5 + 32 + 17) / 6 = 54 / 6 = 9 weeks.
+
+**Q: Define Free Float and explain its utility in activity scheduling.**
+**A:** **Free float** is the amount of time an activity may be delayed without affecting the earliest start date of any subsequent activity. This is a useful measure to communicate to staff as it indicates how much flexibility they have without causing knock-on delays to others.
+
+## 6. Selection of an Appropriate Project Approach
+
+### Key Concepts
+
+*   **Waterfall Model**
+*   **Spiral Model**
+*   **Prototyping (Throw-away/Evolutionary)**
+*   **Incremental Delivery Model**
+*   **Time-boxing**
+*   **Agile Methods**
+*   **Atern (DSDM)**
+*   **MoSCoW Classification**
+*   **Scrum**
+*   **Extreme Programming (XP)**
+*   **Lean Software Development/Kanban**
+
+### Notes
+
+The choice of approach depends on whether development is in-house (where methodologies/technologies are dictated by organizational standards) or outsourced (where methods must be reviewed for each project). Using off-the-shelf software is an alternative, offering reduced cost and high reliability, but lacks competitive advantage and may necessitate changing office procedures.
+
+#### (a) Traditional Software Development Methodologies
+
+*   **Waterfall Model**: A classical, sequential approach (one-shot model) moving from top (requirements) to bottom (implementation). Its strength is creating natural milestones for management review (stage-gate model) and providing confidence in completion forecasts where requirements are well defined and methods understood. Limited scope for iteration.
+*   **Spiral Model**: Characterized by incremental development and the ability to handle various types of risks via prototyping. Each loop (phase) involves analysis, risk resolution through prototyping, implementation reduced maintenance costs (the financial case for prototypes).
+*   **Incremental Delivery Model**: Breaks the application into small components, implemented and delivered sequentially, each providing user benefit. Often uses **Time-boxing** where scope is rigidly constrained by an agreed deadline. Advantages include early user benefits, better cash flow, and reduced risk of requirement changes due to shorter time spans. A disadvantage is potential **software breakage** (modifying earlier increments).
+*   **Rapid Application Development (RAD)**: Also known as rapid prototyping, combining features of prototyping and incremental delivery. Aims to decrease time/cost and limit accommodation costs for change requests by incorporating customer feedback on prototypes early. RAD emphasizes code reuse and specialized tools.
+
+#### (b) Agile Software Development Methodologies
+Agile methods overcome the difficulty of accommodating change requests, reliance on voluminous documentation, and rigidity found in traditional heavyweight methodologies.
+
+Core Principles:
+*   **Incremental Delivery After Each Time Box**: Development occurs over iterations (time boxes, typically a couple of weeks) where delivery dates are sacrosanct, though functionality may be reduced.
+*   **Face-to-Face Communication**: Preferred over written documents; teams are small (5-9 people) and co-located.
+*   **Customer Interactions**: Customer representatives are included in the team, and stakeholders review progress after each iteration.
+*   **Minimal Documentation**: Documents are created on a need-to-know basis and are lightweight.
+*   **Pair Programming**: Two programmers work at one station, one typing, one reviewing, leading to compact, well-written code with fewer errors.
+
+**Atern (DSDM)**: Promotes time-boxing and principles such as focusing on the **Business Model** and to **Deliver on Time**. Requirements are classified using the **MoSCoW classification**:
+*   **M**ust Have (essential features).
+*   **S**hould Have (mandatory but system can operate without them).
+*   **C**ould Have (can be delayed with minor inconvenience).
+*   **W**on’t Have (delayed to a later increment).
+
+**Extreme Programming (XP)**: Based on values of Communication/Feedback, Simplicity (adopting the simplest design), Responsibility, and Courage (the courage to discard work if necessary). XP uses small releases (ideally one to two months), simple design, and rigorous testing (unit testing and function testing, often written before the code is created)
